@@ -1,10 +1,12 @@
-HttpTunnel con tor para programas.
+****HttpTunnel con tor para programas****
 
 [INFO]
 
-No esta expuesto al mundo avierto -- es para uso local, si tus maquinas
-en tu LAN pueden hablar unas a las otras entonces se pueden conectar si haces
-algo mas de configuracion.
+No esta expuesto al mundo abierto -- amenos que te despistes y 
+tengas un descable en port forwarding; es para uso local.
+
+Si las maquinas en tu LAN pueden hablar unas a las otras entonces se 
+pueden conectar si haces algo mas de configuracion.
 
 [DESPLIEGE]
 
