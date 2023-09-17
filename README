@@ -1,0 +1,18 @@
+HttpTunnel con tor para programas.
+
+[INFO]
+
+No esta expuesto al mundo avierto -- es para uso local, si tus maquinas
+en tu LAN pueden hablar unas a las otras entonces se pueden conectar si haces
+algo mas de configuracion.
+
+[DESPLIEGE]
+
+1) `docker compose up` o `docker-compose up`
+2) Espera a que Bootstrapped sea 100%
+3) Ve los ejemplos en 'ejemplos'
+
+[EXTRA]
+
+1) Puedes configurar mozilla para usar este proxy.
+2) Puedes agregar mas configuraciones en config.conf como EntryNodes y ExitNodes
