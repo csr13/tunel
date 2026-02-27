@@ -1,0 +1,8 @@
+SOCKSPort 0.0.0.0:666
+HTTPTunnelPort 0.0.0.0:6666
+
+ControlPort 0.0.0.0:6663
+HashedControlPassword 16:650F23114EF86D3E60193ADBAC8A41314961A237BABE3CF41799D6BC9E
+
+CircuitBuildTimeout 10
+LearnCircuitBuildTimeout 0

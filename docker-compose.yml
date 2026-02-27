@@ -1,56 +1,58 @@
-version: '3'
-
 services:
-  # I have added two more proxies 
   proxy:
-    container_name: local_proxy
+    container_name: tor-proxy-1
     image: local_proxy
+    entrypoint: /start-tor.sh
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     restart: unless-stopped
     expose:
-      - 666
-      - 6666
+      - "666"
+      - "6666"
+      - "6661"
+    volumes:
+      - ./torrc1:/usr/local/etc/tor/torrc:ro
     networks:
       local_proxy:
         ipv4_address: 172.28.0.2
 
   proxy2:
-    container_name: local_proxy2
+    container_name: tor-proxy-2
     image: local_proxy
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    entrypoint: /start-tor.sh
     restart: unless-stopped
     expose:
-      - 666
-      - 6666
+      - "666"
+      - "6666"
+      - "6662"
+    volumes:
+      - ./torrc2:/usr/local/etc/tor/torrc:ro
     networks:
       local_proxy:
         ipv4_address: 172.28.0.3
 
+
   proxy3:
-    container_name: local_proxy3
+    container_name: tor-proxy-3
     image: local_proxy
-    build:
-      context: .
-      dockerfile: ./Dockerfile
     restart: unless-stopped
+    entrypoint: /start-tor.sh
     expose:
-      - 666
-      - 6666
+      - "666"
+      - "6666"
+      - "6663"
+    volumes:
+      - ./torrc3:/usr/local/etc/tor/torrc:ro
     networks:
       local_proxy:
         ipv4_address: 172.28.0.4
 
 
-
 networks:
   local_proxy:
     name: local_proxy
+    driver: bridge
     ipam:
       config:
         - subnet: 172.28.0.0/24
-
-# change network subnets or service ports

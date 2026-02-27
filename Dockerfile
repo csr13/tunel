@@ -22,6 +22,6 @@ RUN ./configure && make install
 
 WORKDIR /
 
-COPY ./config.conf /usr/local/etc/tor/torrc
+COPY ./start-tor.sh .
 
-ENTRYPOINT ["tor"]
+RUN chmod +x /start-tor.sh

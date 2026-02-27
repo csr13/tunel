@@ -2,3 +2,12 @@
 *.swp
 venv
 __pycache__
+
+control_shared/
+
+control*/
+
+*.authcookie
+/var/run/tor/
+
+
