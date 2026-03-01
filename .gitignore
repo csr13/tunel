@@ -6,3 +6,4 @@ control_shared/
 control*/
 *.authcookie
 /var/run/tor/
+.env
