@@ -29,7 +29,7 @@ def pretty_test():
                 print(f"{proxy:26} → \033[32m{ip}\033[0m  [TOR]")
             else:
                 print(f"{proxy:26} → \033[33mweak/non-Tor response\033[0m")
-        except:
+        except Exception:
             print(f"{proxy:26} → \033[31mDOWN\033[0m")
     print()
 
@@ -46,7 +46,7 @@ def health_check():
             )
             if r.status_code == 200 and r.json().get("IsTor"):
                 alive += 1
-        except:
+        except Exception:
             pass
     sys.exit(0 if alive >= 2 else 1)
 

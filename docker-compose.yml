@@ -20,6 +20,9 @@ services:
   proxy2:
     container_name: tor-proxy-2
     image: local_proxy
+    build:
+      context: .
+      dockerfile: Dockerfile
     entrypoint: /start-tor.sh
     restart: unless-stopped
     expose:
@@ -36,8 +39,11 @@ services:
   proxy3:
     container_name: tor-proxy-3
     image: local_proxy
-    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
     entrypoint: /start-tor.sh
+    restart: unless-stopped
     expose:
       - "666"
       - "6666"
